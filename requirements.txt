@@ -1,0 +1,2 @@
+requests==2.28.2
+timeloop==1.0.2
