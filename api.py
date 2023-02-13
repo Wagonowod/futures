@@ -41,7 +41,7 @@ class PriceObserver:
         return Decimal(100 - (current_price / max_price) * 100)
 
     def send_message(self, difference, current_price, max_price):
-        if difference <= self.percentage_price_change:
+        if difference >= self.percentage_price_change:
             if self.message_time is None or self.message_time >= self.message_time + self.message_sending_time:
                 print(
                     f"Цена за последний час изменилась больше чем на 1%, текущая цена {self.ticker}: {current_price}, максимальная цена {self.ticker}: {max_price}. ")
